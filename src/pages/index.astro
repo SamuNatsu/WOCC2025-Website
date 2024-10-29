@@ -1,0 +1,15 @@
+---
+// Layouts
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+// Components
+import Slideshow from '@/components/Slideshow.astro';
+---
+
+<BaseLayout title="Home">
+	<Slideshow list={[
+		"https://www.wocc.org/wocc2024/images/HoHotel.jpg",
+		"https://www.wocc.org/wocc2024/images/m_2.jpg",
+		"https://www.wocc.org/wocc2024/images/m_1.jpg"
+	]}></Slideshow>
+</BaseLayout>

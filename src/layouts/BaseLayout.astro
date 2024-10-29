@@ -1,0 +1,74 @@
+---
+import { wrapBase } from '@/utils';
+
+// Components
+import Navigation from '@comp/Navigation.astro';
+
+// Types
+type Props = { title: string };
+
+// Constants
+const SITE_NAME: string = 'WOCC2025';
+const SITE_DESCRIPTION: string =
+  'The 34th Annual Wireless and Optical Communications Conference(WOCC2025)';
+const SITE_POST_IMAGE_URL: string = '';
+
+const NAVIGATION: string[] = [
+  'Home',
+  'About Us',
+  'Organizing Committees',
+  'Technical Program',
+  'Speakers',
+  'Paper Submission',
+  'Call for Paper',
+  'Registration',
+  'Sponsorship',
+  'Venue and Hotel',
+  'IEEE Conference'
+];
+
+// Injects
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={SITE_DESCRIPTION} />
+    <meta property="og:title" content={`${SITE_NAME} - ${title}`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={SITE_POST_IMAGE_URL} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:description" content={SITE_DESCRIPTION} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <link rel="canonical" href={Astro.url} />
+    <link rel="sitemap" href={wrapBase('/sitemap-index.xml')} />
+    <link rel="icon" type="image/svg+xml" href={wrapBase('/favicon.svg')} />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href={wrapBase('/favicon.ico')}
+    />
+    <title>{SITE_NAME} - {title}</title>
+    <style define:vars={{ bgUrl: `url("${wrapBase('/imgs/background.jpg')}")` }}>
+      body {
+        background-image: var(--bgUrl);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <div class="flex gap-8 items-start m-8 max-w-[1000px] mx-auto p-4">
+      <Navigation list={NAVIGATION} />
+      <main class="bg-white p-8 rounded w-3/4">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

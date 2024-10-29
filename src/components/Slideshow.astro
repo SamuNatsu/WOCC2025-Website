@@ -1,0 +1,128 @@
+---
+import { Image } from 'astro:assets';
+
+// Types
+type Props = { list: string[] };
+
+// Injects
+const { list } = Astro.props;
+---
+
+<c-slideshow class="block overflow-hidden relative w-full">
+  <div class="container bg-black flex" data-count={list.length}>
+    {list.map((href: string) => <Image alt={href} src={href} inferSize />)}
+  </div>
+  <button class="controller prev"></button>
+  <button class="controller next"></button>
+  <div
+    class="absolute bottom-0 flex gap-2 items-center justify-center py-2 w-full">
+    {list.map(() => <button class="indicator" />)}
+  </div>
+</c-slideshow>
+
+<style>
+  img {
+    @apply w-full;
+  }
+
+  .controller {
+    @apply absolute bg-gradient-to-r h-full opacity-0 top-0 transition-opacity w-1/6 hover:opacity-100;
+
+    &.prev {
+      @apply from-black/50 left-0 to-transparent;
+    }
+
+    &.next {
+      @apply from-transparent right-0 to-black/50;
+    }
+  }
+
+  .indicator {
+    @apply border-2 border-white h-4 rounded-full w-4;
+
+    &.current {
+      @apply bg-white;
+    }
+  }
+</style>
+
+<script>
+  import anime from 'animejs';
+
+  class Slideshow extends HTMLElement {
+    private count: number;
+    private imgs: HTMLImageElement[];
+    private indicators: HTMLButtonElement[];
+    private prev: HTMLButtonElement;
+    private next: HTMLButtonElement;
+
+    private curIdx: number = 0;
+    private busy: boolean = false;
+    private curX: number = 0;
+
+    public constructor() {
+      super();
+
+      this.count = parseInt(
+        this.querySelector<HTMLElement>('.container')!.dataset.count!
+      );
+      this.imgs = [...this.querySelectorAll('img')] as HTMLImageElement[];
+      this.indicators = [
+        ...this.querySelectorAll('.indicator')
+      ] as HTMLButtonElement[];
+      this.prev = this.querySelector('.prev')!;
+      this.next = this.querySelector('.next')!;
+    }
+
+    public connectedCallback(): void {
+      this.indicators[this.curIdx].classList.add('current');
+
+      this.prev.addEventListener('click', (): void =>
+        this.slide((this.curIdx + this.count - 1) % this.count)
+      );
+      this.next.addEventListener('click', (): void =>
+        this.slide((this.curIdx + 1) % this.count)
+      );
+      this.indicators.forEach((el: HTMLButtonElement, idx: number): void =>
+        el.addEventListener('click', (): void => this.slide(idx))
+      );
+
+      setInterval(
+        (): void => this.slide((this.curIdx + 1) % this.count),
+        10000
+      );
+    }
+
+    private slide(to: number): void {
+      if (this.busy || this.curIdx === to) {
+        return;
+      }
+      this.busy = true;
+
+      this.indicators[this.curIdx].classList.remove('current');
+      this.curIdx = to;
+      this.indicators[this.curIdx].classList.add('current');
+
+      anime({
+        targets: [this.querySelector('.container')],
+        easing: 'easeInOutQuad',
+        duration: 500,
+        translateX: [-this.curX, -this.getToX(to)],
+        complete: (): void => {
+          this.curX = this.getToX(to);
+          this.busy = false;
+        }
+      });
+    }
+
+    private getToX(to: number): number {
+      let ret: number = 0;
+      for (let i = 0; i < to; i++) {
+        ret += this.imgs[i].width;
+      }
+      return ret;
+    }
+  }
+
+  customElements.define('c-slideshow', Slideshow);
+</script>
