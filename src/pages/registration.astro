@@ -4,5 +4,108 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Registration">
-	<h1>AAA</h1>
+  <h1>Important Dates</h1>
+  <p>TBD</p>
+
+  <h1>Important Reminder</h1>
+  <p>
+    At least one author of an accepted paper must register at <span
+      class="font-bold text-red-500">the "Regular" or "IEEE Members" rates</span
+    >, even if the author is a student.
+  </p>
+  <p>
+    One "Regular" or "IEEE Members" registration can cover <span
+      class="font-bold text-red-500">at most 2</span
+    > accepted paper.
+  </p>
+  <p class="font-bold text-red-500">
+    Each accepted paper is required to be fully registered by August 1;
+    otherwise, the paper will not be included in the conference proceedings and
+    IEEE Xplore.
+  </p>
+  <p class="font-bold text-red-500">
+    Please note that at least one of the authors of accepted papers is required
+    to register and present the paper at the conference in-person, otherwise the
+    paper will have to be removed from the digital library after the conference!
+  </p>
+
+  <h1>Registration Steps</h1>
+  <p>TBD</p>
+
+  <h1>Registration Fee</h1>
+  <div class="table-wrapper">
+    <table class="fee-table">
+      <thead>
+        <tr>
+          <th>Registration Types</th>
+          <th>Early-Bird</th>
+          <th>Standard</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Author IEEE Member</th>
+          <td>???</td>
+          <td>???</td>
+        </tr>
+        <tr>
+          <th>Author Non-Member</th>
+          <td>???</td>
+          <td>???</td>
+        </tr>
+        <tr>
+          <th>Non-Author IEEE Member</th>
+          <td>???</td>
+          <td>???</td>
+        </tr>
+        <tr>
+          <th>Non-Author Non-Member</th>
+          <td>???</td>
+          <td>???</td>
+        </tr>
+        <tr>
+          <th>Invited Author</th>
+          <td>???</td>
+          <td>???</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h1>Registration Confirmation & Receipt</h1>
+  <p>
+    Registration will be accepted <b>ONLY</b> upon the successful reception of corresponding
+    payment. The confirmation of registration will be sent via email upon clearance
+    of payment.
+  </p>
+  <p>
+    <b>
+      Please make sure your email server won’t filter out our notification
+      emails as spams!
+    </b>
+  </p>
 </BaseLayout>
+
+<style>
+  .fee-table {
+    td,
+    th {
+      @apply border border-white;
+    }
+
+    thead tr {
+      @apply bg-teal-800 text-white;
+    }
+    tbody {
+      td {
+        @apply text-center;
+      }
+      th {
+        @apply bg-teal-600 text-white;
+      }
+      tr {
+        @apply bg-teal-100;
+      }
+    }
+  }
+</style>

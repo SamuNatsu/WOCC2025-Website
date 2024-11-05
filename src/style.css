@@ -1,21 +1,40 @@
 /* Global stylesheet */
 
-a {
-  @apply text-blue-500 hover:text-red-500;
-}
+main {
+  a {
+    @apply text-blue-500 hover:text-red-500;
+  }
 
-h1 {
-  @apply border-b-2 font-bold my-4 text-3xl;
-}
+  > h1 {
+    @apply border-b-2 font-bold my-4 text-3xl text-teal-700;
+  }
 
-.table-wrapper {
-  @apply my-4 overflow-auto py-2;
+  > h2 {
+    @apply font-bold my-4 text-teal-700;
 
-  table {
-    @apply w-full whitespace-nowrap;
+    &::before {
+      content: '§ ';
+    }
+  }
 
-    tb, th {
-      @apply px-2;
+  > p {
+    @apply my-4;
+  }
+
+  > ul {
+    @apply list-disc my-4 px-8;
+  }
+
+  .table-wrapper {
+    @apply my-4 overflow-auto py-2;
+
+    table {
+      @apply w-full whitespace-nowrap;
+
+      tb,
+      th {
+        @apply px-2;
+      }
     }
   }
 }

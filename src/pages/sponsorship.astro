@@ -1,8 +1,38 @@
 ---
 // Layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { wrapBase } from '@/utils';
 ---
 
 <BaseLayout title="Sponsorship">
-	<h1>AAA</h1>
+  <h1>Sponsorship</h1>
+
+  <h2>Organizer</h2>
+  <ul>
+    <li>
+      <a href="http://www.wocc.org/" rel="noopener noreferer" target="_blank"
+        >Wireless and Optical Communication Conference (WOCC.org)</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://www.must.edu.mo/"
+        rel="noopener noreferer"
+        target="_blank">Macau University of Science and Technology (MUST)</a
+      >
+    </li>
+  </ul>
+
+  <h2>Technical Sponsors</h2>
+  <div class="flex flex-wrap gap-4 items-center *:w-52">
+    <img alt="IEEE" src={wrapBase('/imgs/logos/ieee.webp')} />
+    <img
+      alt="IEEE Photonics Society"
+      src={wrapBase('/imgs/logos/ieee-photonics-society.webp')}
+    />
+  </div>
+  <ul>
+		<li>IEEE Macau Section</li>
+		<li>IEEE Photonics Society</li>
+	</ul>
 </BaseLayout>

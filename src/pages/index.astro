@@ -1,5 +1,5 @@
 ---
-import { range } from '@utils/index';
+import { range, wrapBase } from '@utils/index';
 
 // Layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
@@ -12,50 +12,43 @@ const WOCC_CURRENT_YEAR: number = 2025;
 ---
 
 <BaseLayout title="Home">
-	<!-- Picture slideshow, for internal links please wrapped with `wrapBase` -->
-	<!-- function to get the correct link, otherwise directly listing it -->
+  <!-- Picture slideshow, for internal links please wrapped with `wrapBase` -->
+  <!-- function to get the correct link, otherwise directly listing it -->
   <Slideshow
     list={[
-      'https://www.wocc.org/wocc2024/images/HoHotel.jpg',
-      'https://www.wocc.org/wocc2024/images/m_2.jpg',
-      'https://www.wocc.org/wocc2024/images/m_1.jpg'
+      wrapBase('/imgs/slideshow/1.webp'),
+      wrapBase('/imgs/slideshow/2.webp'),
+      wrapBase('/imgs/slideshow/3.webp')
     ]}
   />
 
-	<!-- News section -->
-	<h1>News</h1>
+  <!-- News section -->
+  <h1>News</h1>
+  <p>TBD</p>
 
-	<!-- Important dates section, make sure table header is left aligned -->
-	<h1>Important Dates</h1>
-	<div class="table-wrapper">
-		<table>
-			<tbody>
-				<tr>
-					<th align="left">Full Paper Submission deadline</th>
-					<td>May 31, 2024 (Extended)</td>
-				</tr>
-				<tr>
-					<th align="left">Notification of Acceptance</th>
-					<td>June 10, 2024</td>
-				</tr>
-				<tr>
-					<th align="left">Registration Starts</th>
-					<td>June 10, 2024</td>
-				</tr>
-				<tr>
-					<th align="left">Camera-Ready</th>
-					<td>June 20, 2024</td>
-				</tr>
-				<tr>
-					<th align="left">Online Registration Closed</th>
-					<td>August 30, 2024</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+  <!-- Important dates section, make sure table header is left aligned -->
+  <h1>Important Dates</h1>
+  <div class="table-wrapper">
+    <table>
+      <tbody>
+        <tr>
+          <th align="left">Full Paper Submission deadline</th>
+          <td>March 1, 2025</td>
+        </tr>
+        <tr>
+          <th align="left">Notification of Acceptance</th>
+          <td>March 20, 2025</td>
+        </tr>
+        <tr>
+          <th align="left">Camera-Ready</th>
+          <td>April 1, 2025</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-	<!-- Past event section, automatically generated, no need to modify, just -->
-	<!-- update the `WOCC_CURRENT_YEAR` above is ok -->
+  <!-- Past event section, automatically generated, no need to modify, just -->
+  <!-- update the `WOCC_CURRENT_YEAR` above is ok -->
   <h1>Past Events</h1>
   <div class="flex flex-wrap">
     {

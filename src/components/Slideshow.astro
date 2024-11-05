@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-
 // Types
 type Props = { list: string[] };
 
@@ -10,7 +8,7 @@ const { list } = Astro.props;
 
 <c-slideshow class="block overflow-hidden relative w-full">
   <div class="container bg-black flex" data-count={list.length}>
-    {list.map((href: string) => <Image alt={href} src={href} inferSize />)}
+    {list.map((href: string) => <img alt={href} src={href} />)}
   </div>
   <button class="controller prev"></button>
   <button class="controller next"></button>

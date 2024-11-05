@@ -1,4 +1,5 @@
 ---
+import logo from '@/assets/images/logo.svg';
 import { wrapBase } from '@/utils';
 
 // Stylesheets
@@ -6,14 +7,15 @@ import '@/style.css';
 
 // Components
 import Navigation from '@comp/Navigation.astro';
+import { Image } from 'astro:assets';
 
 // Types
 type Props = { title: string };
 
 // Constants
-const SITE_NAME: string = 'WOCC2025';
+const SITE_NAME: string = 'WOCC 2025';
 const SITE_DESCRIPTION: string =
-  'The 34th Annual Wireless and Optical Communications Conference(WOCC2025)';
+  'The 34th Wireless and Optical Communications Conference (WOCC2025)';
 const SITE_POST_IMAGE_URL: string = '';
 
 const NAVIGATION: string[] = [
@@ -56,8 +58,10 @@ const { title } = Astro.props;
       href={wrapBase('/favicon.ico')}
     />
     <title>{SITE_NAME} - {title}</title>
-    <style define:vars={{ bgUrl: `url("${wrapBase('/imgs/background.jpg')}")` }}>
+    <style define:vars={{ bgUrl: `url("${wrapBase('/imgs/background.jpg')}")` }}
+    >
       body {
+        background-attachment: fixed;
         background-image: var(--bgUrl);
         background-position: center;
         background-repeat: no-repeat;
@@ -66,8 +70,22 @@ const { title } = Astro.props;
     </style>
   </head>
   <body>
-    <header></header>
-    <div class="flex flex-col gap-8 m-8 max-w-[1000px] mx-auto p-4 sm:flex-row sm:items-start">
+    <header
+      class="flex flex-col items-center justify-center max-w-[1000px] mx-4 select-none text-[#0d7ed3] sm:flex-row sm:gap-12 sm:mx-auto">
+      <div class="flex flex-col flex-shrink-0 items-center relative">
+        <Image alt="logo" class="w-[300px]" src={logo} />
+        <h1 class="absolute -bottom-4 font-bold text-5xl">
+          {SITE_NAME}
+        </h1>
+      </div>
+      <div class="font-bold text-white text-xl translate-y-8">
+        <p>{SITE_DESCRIPTION}</p>
+        <p>May 20 - May 22, 2025</p>
+        <p>Macau, China</p>
+      </div>
+    </header>
+    <div
+      class="flex flex-col gap-8 m-8 max-w-[1000px] mx-auto p-4 sm:flex-row sm:items-start">
       <Navigation list={NAVIGATION} />
       <main class="bg-white p-8 rounded sm:w-3/4">
         <slot />
