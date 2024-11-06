@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://www.wocc.org/wocc2025/sitemap-index.xml
