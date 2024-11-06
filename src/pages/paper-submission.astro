@@ -1,6 +1,9 @@
 ---
 // Layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
+
+// Components
+import ExternalLink from '@/components/ExternalLink.astro';
 ---
 
 <BaseLayout title="Paper Submission">
@@ -17,6 +20,10 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           <th align="left">Notification of Acceptance</th>
           <td>March 20, 2025</td>
         </tr>
+        <tr>
+          <th align="left">Camera-Ready</th>
+          <td>April 1, 2025</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -24,21 +31,18 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   <!-- Guidelines and website -->
   <h1>Submission Website and Guidelines</h1>
   <p>
-    All submission shall follow IEEE Templates, which are available at <a
-      href="http://www.ieee.org/conferences_events/conferences/publishing/templates.html"
-      rel="noopener noreferer"
-      target="_blank"
-      >http://www.ieee.org/conferences_events/conferences/publishing/templates.html</a
-    >
+    All submission shall follow IEEE Templates, which are available at
+    <ExternalLink
+      href="http://www.ieee.org/conferences_events/conferences/publishing/templates.html">
+      http://www.ieee.org/conferences_events/conferences/publishing/templates.html
+    </ExternalLink>
   </p>
   <p>
-    <span class="font-bold text-red-500"
-      >Please submit your original papers at EDAS</span
-    ><br /><a
-      href="https://edas.info/N32001"
-      rel="noopener noreferer"
-      target="_blank">https://edas.info/N32001</a
-    >
+    <span class="font-bold text-red-500">
+      Please submit your original papers at EDAS
+    </span>
+    <br />
+    <span>EDAS link is TBD</span>
   </p>
   <p>There are three symposias (tracks) of WOCC 2025:</p>
   <ul>
@@ -53,12 +57,12 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       Paper will be awarded to a full paper in each symposium.</b
     >
   </p>
-	
-	<h2>The Guideline for Registration</h2>
-	<p>TBD</p>
 
-	<h2>The Guideline for Camera Ready</h2>
-	<p>TBD</p>
+  <h2>The Guideline for Registration</h2>
+  <p>TBD</p>
+
+  <h2>The Guideline for Camera Ready</h2>
+  <p>TBD</p>
 
   <!-- Reminders -->
   <h1>Important Reminder</h1>
@@ -78,19 +82,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     5 printed pages (10pt font) including figures and tables (maximum 1
     additional page with over length page charge of <span
       class="font-bold text-red-500">USD 150</span
-    > if accepted). Papers exceeding 6 pages will not be accepted at <a
-      href="https://edas.info/N32001"
-      rel="noopener noreferer"
-      target="_blank">EDAS</a
-    >.
+    > if accepted). Papers exceeding 6 pages will not be accepted at EDAS.
   </p>
   <p>
     The submitted manuscripts should be <span class="font-bold text-red-500"
       >in PDF format</span
-    >. All manuscripts are recommended to follow the <a
-      href="http://www.ieee.org/conferences_events/conferences/publishing/templates.html"
-      rel="noopener noreferer"
-      target="_blank">IEEE templates</a
-    >.
+    >. All manuscripts are recommended to follow the
+    <ExternalLink
+      href="http://www.ieee.org/conferences_events/conferences/publishing/templates.html">
+      IEEE templates
+    </ExternalLink>.
   </p>
 </BaseLayout>

@@ -1,7 +1,11 @@
 ---
+import { wrapBase } from '@/utils';
+
 // Layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { wrapBase } from '@/utils';
+
+// Components
+import ExternalLink from '@/components/ExternalLink.astro';
 ---
 
 <BaseLayout title="Sponsorship">
@@ -10,16 +14,14 @@ import { wrapBase } from '@/utils';
   <h2>Organizer</h2>
   <ul>
     <li>
-      <a href="http://www.wocc.org/" rel="noopener noreferer" target="_blank"
-        >Wireless and Optical Communication Conference (WOCC.org)</a
-      >
+      <ExternalLink href="https://www.wocc.org/">
+        Wireless and Optical Communication Conference (WOCC.org)
+      </ExternalLink>
     </li>
     <li>
-      <a
-        href="https://www.must.edu.mo/"
-        rel="noopener noreferer"
-        target="_blank">Macau University of Science and Technology (MUST)</a
-      >
+      <ExternalLink href="https://www.must.edu.mo/">
+        Macau University of Science and Technology (MUST)
+      </ExternalLink>
     </li>
   </ul>
 
@@ -32,7 +34,7 @@ import { wrapBase } from '@/utils';
     />
   </div>
   <ul>
-		<li>IEEE Macau Section</li>
-		<li>IEEE Photonics Society</li>
-	</ul>
+    <li>IEEE Macau Section</li>
+    <li>IEEE Photonics Society</li>
+  </ul>
 </BaseLayout>

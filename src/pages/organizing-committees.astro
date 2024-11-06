@@ -1,10 +1,11 @@
 ---
+import { wrapBase } from '@/utils';
+
 // Layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
 // Components
 import CommitteeCard from '@/components/CommitteeCard.astro';
-import { wrapBase } from '@/utils';
 ---
 
 <BaseLayout title="Organizing Committees">
@@ -41,7 +42,7 @@ import { wrapBase } from '@/utils';
     affiliation="Sun Yan-sen University"
     image={wrapBase('/imgs/committees/xu-chen.webp')}
   />
-  
+
   <h1>Publication Chair</h1>
   <CommitteeCard
     name="Rubing Huang"

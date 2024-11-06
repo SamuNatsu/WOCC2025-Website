@@ -1,14 +1,12 @@
 ---
-import { range, wrapBase } from '@utils/index';
+import { range, wrapBase } from '@/utils';
 
 // Layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
 // Components
+import ExternalLink from '@/components/ExternalLink.astro';
 import Slideshow from '@/components/Slideshow.astro';
-
-// Constants
-const WOCC_CURRENT_YEAR: number = 2025;
 ---
 
 <BaseLayout title="Home">
@@ -24,7 +22,35 @@ const WOCC_CURRENT_YEAR: number = 2025;
 
   <!-- News section -->
   <h1>News</h1>
+
+  <h2>Keynote Speakers</h2>
   <p>TBD</p>
+
+  <h2>Invited Speakers</h2>
+  <p>TBD</p>
+
+  <h2>Best Paper Award</h2>
+  <ul>
+    <li>Each one of the three Symposias will award one or two best papers</li>
+    <li>Best papers will be selected for the Charles Kao Best Paper Award</li>
+  </ul>
+
+  <h2>Note</h2>
+  <ul>
+    <li>
+      Mark your calendar! WOCC 2025 will take place between <span
+        class="font-bold text-red-500">May 20-22, 2025</span
+      >
+    </li>
+    <li>
+      The accepted paper of WOCC 2025 will be published into WOCC 2025
+      Conference Proceedings, which will be indexed by <span
+        class="font-bold text-red-500">IEEE Xplore</span
+      >, <span class="font-bold text-red-500">EI Compendex</span> and <span
+        class="font-bold text-red-500">Scopus</span
+      >
+    </li>
+  </ul>
 
   <!-- Important dates section, make sure table header is left aligned -->
   <h1>Important Dates</h1>
@@ -47,21 +73,17 @@ const WOCC_CURRENT_YEAR: number = 2025;
     </table>
   </div>
 
-  <!-- Past event section, automatically generated, no need to modify, just -->
-  <!-- update the `WOCC_CURRENT_YEAR` above is ok -->
+  <!-- Past event section, automatically generated, just update the end year -->
+  <!-- to the last year is ok -->
   <h1>Past Events</h1>
   <div class="flex flex-wrap">
     {
-      range(1999, WOCC_CURRENT_YEAR - 1)
+      range(1999, 2024)
         .toReversed()
         .map((yr: number) => (
-          <a
-            href={`https://www.wocc.org/wocc${yr}`}
-            rel="noopener noreferer"
-            target="_blank"
-            class="mx-1">
+          <ExternalLink class="mx-1" href={`https://www.wocc.org/wocc${yr}/`}>
             {yr}
-          </a>
+          </ExternalLink>
         ))
     }
   </div>
