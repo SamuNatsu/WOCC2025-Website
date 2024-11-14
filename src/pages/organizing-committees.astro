@@ -1,6 +1,9 @@
 ---
 import { wrapBase } from '@/utils';
 
+// Stylesheets
+import '@/styles/table.css';
+
 // Layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
@@ -9,6 +12,7 @@ import CommitteeCard from '@/components/CommitteeCard.astro';
 ---
 
 <BaseLayout title="Organizing Committees">
+  <!-- General chairs section -->
   <h1>General Chairs</h1>
   <CommitteeCard
     name="Qinglin Zhao"
@@ -21,6 +25,7 @@ import CommitteeCard from '@/components/CommitteeCard.astro';
     image={wrapBase('/imgs/committees/jie-zhang.jpg')}
   />
 
+  <!-- Program chairs section -->
   <h1>Program Chairs</h1>
   <CommitteeCard
     name="Jianqing Li"
@@ -43,6 +48,7 @@ import CommitteeCard from '@/components/CommitteeCard.astro';
     image={wrapBase('/imgs/committees/xu-chen.jpg')}
   />
 
+  <!-- Publication chairs section -->
   <h1>Publication Chair</h1>
   <CommitteeCard
     name="Rubing Huang"
@@ -50,6 +56,7 @@ import CommitteeCard from '@/components/CommitteeCard.astro';
     image={wrapBase('/imgs/committees/rubing-huang.jpg')}
   />
 
+  <!-- Local coordinate chairs section -->
   <h1>Local Coordinate Chair</h1>
   <CommitteeCard
     name="Xuanxuan Xiao"
@@ -57,6 +64,7 @@ import CommitteeCard from '@/components/CommitteeCard.astro';
     image={wrapBase('/imgs/committees/xuanxuan-xiao.jpg')}
   />
 
+  <!-- Finance chairs section -->
   <h1>Finance Chair</h1>
   <CommitteeCard
     name="Jinyu Tian"
@@ -64,6 +72,7 @@ import CommitteeCard from '@/components/CommitteeCard.astro';
     image={wrapBase('/imgs/committees/jinyu-tian.jpg')}
   />
 
+  <!-- Publicity chairs section -->
   <h1>Publicity Chair</h1>
   <CommitteeCard
     name="Li Feng"
@@ -71,9 +80,10 @@ import CommitteeCard from '@/components/CommitteeCard.astro';
     image={wrapBase('/imgs/committees/li-feng.jpg')}
   />
 
+  <!-- Advisory members section -->
   <h1>Advisory Members</h1>
-  <div class="table-wrapper">
-    <table class="members-table">
+  <div class="tb-wrapper">
+    <table class="th-right">
       <tbody>
         <tr>
           <th>Mengchu Zhou</th>
@@ -107,11 +117,3 @@ import CommitteeCard from '@/components/CommitteeCard.astro';
     </table>
   </div>
 </BaseLayout>
-
-<style>
-  .members-table {
-    tbody tr th {
-      @apply text-right;
-    }
-  }
-</style>

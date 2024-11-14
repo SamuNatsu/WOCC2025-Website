@@ -1,8 +1,12 @@
-/* Global stylesheet */
+/* Main stylesheet */
 
 main {
   a {
     @apply text-blue-500 hover:text-red-500;
+  }
+
+  em {
+    @apply font-bold not-italic text-red-500;
   }
 
   > h1 {
@@ -23,18 +27,5 @@ main {
 
   > ul {
     @apply list-disc my-4 px-8;
-  }
-
-  .table-wrapper {
-    @apply my-4 overflow-auto py-2;
-
-    table {
-      @apply w-full whitespace-nowrap;
-
-      tb,
-      th {
-        @apply px-2;
-      }
-    }
   }
 }

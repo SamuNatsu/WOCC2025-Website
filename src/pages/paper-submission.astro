@@ -1,4 +1,7 @@
 ---
+// Stylesheets
+import '@/styles/table.css';
+
 // Layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
@@ -9,19 +12,19 @@ import ExternalLink from '@/components/ExternalLink.astro';
 <BaseLayout title="Paper Submission">
   <!-- Important dates table for paper submission -->
   <h1>Important Dates</h1>
-  <div class="table-wrapper">
-    <table>
+  <div class="tb-wrapper">
+    <table class="th-left">
       <tbody>
         <tr>
-          <th align="left">Full Paper Submission Deadline</th>
+          <th>Full Paper Submission Deadline</th>
           <td>March 1, 2025</td>
         </tr>
         <tr>
-          <th align="left">Notification of Acceptance</th>
+          <th>Notification of Acceptance</th>
           <td>March 20, 2025</td>
         </tr>
         <tr>
-          <th align="left">Camera-Ready</th>
+          <th>Camera-Ready</th>
           <td>April 1, 2025</td>
         </tr>
       </tbody>
@@ -38,9 +41,7 @@ import ExternalLink from '@/components/ExternalLink.astro';
     </ExternalLink>
   </p>
   <p>
-    <span class="font-bold text-red-500">
-      Please submit your original papers at EDAS
-    </span>
+    <em>Please submit your original papers at EDAS</em>
     <br />
     <ExternalLink href="https://edas.info/N33162">
       https://edas.info/N33162
@@ -54,25 +55,25 @@ import ExternalLink from '@/components/ExternalLink.astro';
   </ul>
   <p><b>Please pick one of them to submit your manuscripts</b></p>
   <p>
-    <b
-      ><span class="text-red-500">4-5 page Full Papers</span> are welcome. A Best
-      Paper will be awarded to a full paper in each symposium.</b
-    >
+    <b>
+      <em>4-5 page full papers</em> are welcome. A Best Paper will be awarded to
+      a full paper in each symposium.
+    </b>
   </p>
 
   <h2>The Guideline for Registration</h2>
-  <p>TBD</p>
+  <p class="coming-soon"></p>
 
   <h2>The Guideline for Camera Ready</h2>
-  <p>TBD</p>
+  <p class="coming-soon"></p>
 
   <!-- Reminders -->
   <h1>Important Reminder</h1>
   <p>
-    At least one author of an accepted paper must register at <span
-      class="font-bold text-red-500">the "Regular" or "IEEE Members" rates</span
-    >, even if the author is a student. A registration of "Student" category is
-    not valid for covering the accepted paper.
+    At least one author of an accepted paper must register at
+    <em>the "Regular" or "IEEE Members" rates</em>, even if the author is a
+    student. A registration of "Student" category is not valid for covering the
+    accepted paper.
   </p>
   <p>
     One "Regular" or "IEEE Members" registration can cover <span
@@ -82,15 +83,14 @@ import ExternalLink from '@/components/ExternalLink.astro';
   <p>
     All submissions should be written in English with a maximum paper length of
     5 printed pages (10pt font) including figures and tables (maximum 1
-    additional page with over length page charge of <span
-      class="font-bold text-red-500">USD 150</span
-    > if accepted). Papers exceeding 6 pages will not be accepted at
+    additional page with over length page charge of
+    <em>USD 150</em> if accepted). Papers exceeding 6 pages will not be accepted
+    at
     <ExternalLink href="https://edas.info/N33162">EDAS</ExternalLink>.
   </p>
   <p>
-    The submitted manuscripts should be <span class="font-bold text-red-500"
-      >in PDF format</span
-    >. All manuscripts are recommended to follow the
+    The submitted manuscripts should be <em>in PDF format</em>. All manuscripts
+    are recommended to follow the
     <ExternalLink
       href="http://www.ieee.org/conferences_events/conferences/publishing/templates.html">
       IEEE templates

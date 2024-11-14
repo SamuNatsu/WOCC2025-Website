@@ -1,6 +1,9 @@
 ---
 import { range, wrapBase } from '@/utils';
 
+// Stylesheets
+import '@/styles/table.css';
+
 // Layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
@@ -24,49 +27,45 @@ import Slideshow from '@/components/Slideshow.astro';
   <h1>News</h1>
 
   <h2>Keynote Speakers</h2>
-  <p>TBD</p>
+  <p class="coming-soon"></p>
 
   <h2>Invited Speakers</h2>
-  <p>TBD</p>
+  <p class="coming-soon"></p>
 
   <h2>Best Paper Award</h2>
   <ul>
-    <li>Each one of the three Symposias will award one or two best papers</li>
+    <li>Each one of the three symposias will award one or two best papers</li>
     <li>Best papers will be selected for the Charles Kao Best Paper Award</li>
   </ul>
 
   <h2>Note</h2>
   <ul>
     <li>
-      Mark your calendar! WOCC 2025 will take place between <span
-        class="font-bold text-red-500">May 20-22, 2025</span
-      >
+      Mark your calendar! WOCC 2025 will take place between
+      <em>May 20-22, 2025</em>
     </li>
     <li>
       The accepted paper of WOCC 2025 will be published into WOCC 2025
-      Conference Proceedings, which will be indexed by <span
-        class="font-bold text-red-500">IEEE Xplore</span
-      >, <span class="font-bold text-red-500">EI Compendex</span> and <span
-        class="font-bold text-red-500">Scopus</span
-      >
+      Conference Proceedings, which will be indexed by <em>IEEE Xplore</em>,
+      <em>EI Compendex</em> and <em>Scopus</em>
     </li>
   </ul>
 
-  <!-- Important dates section, make sure table header is left aligned -->
+  <!-- Important dates section -->
   <h1>Important Dates</h1>
-  <div class="table-wrapper">
-    <table>
+  <div class="tb-wrapper">
+    <table class="th-left">
       <tbody>
         <tr>
-          <th align="left">Full Paper Submission Deadline</th>
+          <th>Full Paper Submission Deadline</th>
           <td>March 1, 2025</td>
         </tr>
         <tr>
-          <th align="left">Notification of Acceptance</th>
+          <th>Notification of Acceptance</th>
           <td>March 20, 2025</td>
         </tr>
         <tr>
-          <th align="left">Camera-Ready</th>
+          <th>Camera-Ready</th>
           <td>April 1, 2025</td>
         </tr>
       </tbody>

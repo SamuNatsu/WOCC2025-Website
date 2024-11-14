@@ -1,0 +1,17 @@
+/* Global styles */
+
+*::-webkit-scrollbar {
+  @apply h-2 w-2;
+}
+*::-webkit-scrollbar-thumb {
+  @apply bg-neutral-500 rounded;
+}
+*::-webkit-scrollbar-track {
+  @apply bg-neutral-100;
+}
+
+.coming-soon::after {
+  content: 'Coming Soon';
+
+  @apply italic text-neutral-500;
+}

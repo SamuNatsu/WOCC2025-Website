@@ -1,42 +1,46 @@
 ---
+// Stylesheets
+import '@/styles/table.css';
+
 // Layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Registration">
+  <!-- Important dates for registration section -->
   <h1>Important Dates</h1>
-  <p>TBD</p>
+  <p class="coming-soon"></p>
 
+  <!-- Reminder section -->
   <h1>Important Reminder</h1>
   <p>
-    At least one author of an accepted paper must register at <span
-      class="font-bold text-red-500">the "Regular" or "IEEE Members" rates</span
-    >, even if the author is a student.
+    At least one author of an accepted paper must register at
+    <em>the "Regular" or "IEEE Members" rates</em>, even if the author is a
+    student.
   </p>
   <p>
-    One "Regular" or "IEEE Members" registration can cover <span
-      class="font-bold text-red-500">at most 2</span
-    > accepted paper.
+    One "Regular" or "IEEE Members" registration can cover <em>at most 2</em> accepted
+    paper.
   </p>
+  <!-- <p>
+    Each accepted paper is required to be <em>fully registered by August 1</em>;
+    otherwise, the paper will not be included in the conference proceedings and
+    IEEE Xplore.
+  </p> -->
   <p>
-    Each accepted paper is required to be <span class="font-bold text-red-500"
-      >fully registered by August 1</span
-    >; otherwise, the paper will not be included in the conference proceedings
-    and IEEE Xplore.
-  </p>
-  <p>
-    Please note that <span class="font-bold text-red-500">at least one</span> of
-    the authors of accepted papers is required to register and present the paper
-    at the conference in-person, otherwise the paper will have to be removed from
-    the digital library after the conference!
+    Please note that <em>at least one</em> of the authors of accepted papers is required
+    to register and present the paper at the conference in-person, otherwise the
+    paper will have to be removed from the digital library after the conference!
   </p>
 
+  <!-- Steps section -->
   <h1>Registration Steps</h1>
-  <p>TBD</p>
+  <p class="coming-soon"></p>
 
+  <!-- Fee section -->
   <h1>Registration Fee</h1>
-  <div class="table-wrapper">
-    <table class="fee-table">
+  <div class="tb-wrapper">
+    <table class="tb-colored td-center">
       <thead>
         <tr>
           <th>Registration Types</th>
@@ -47,28 +51,28 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       <tbody>
         <tr>
           <th>Author IEEE Member</th>
-          <td>TBD</td>
-          <td>TBD</td>
+          <td class="coming-soon"></td>
+          <td class="coming-soon"></td>
         </tr>
         <tr>
           <th>Author Non-Member</th>
-          <td>TBD</td>
-          <td>TBD</td>
+          <td class="coming-soon"></td>
+          <td class="coming-soon"></td>
         </tr>
         <tr>
           <th>Non-Author IEEE Member</th>
-          <td>TBD</td>
-          <td>TBD</td>
+          <td class="coming-soon"></td>
+          <td class="coming-soon"></td>
         </tr>
         <tr>
           <th>Non-Author Non-Member</th>
-          <td>TBD</td>
-          <td>TBD</td>
+          <td class="coming-soon"></td>
+          <td class="coming-soon"></td>
         </tr>
         <tr>
           <th>Invited Author</th>
-          <td>TBD</td>
-          <td>TBD</td>
+          <td class="coming-soon"></td>
+          <td class="coming-soon"></td>
         </tr>
       </tbody>
     </table>
@@ -76,37 +80,14 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
   <h1>Registration Confirmation & Receipt</h1>
   <p>
-    Registration will be accepted <span class="font-bold text-red-500"
-      >ONLY</span
-    > upon the successful reception of corresponding payment. The confirmation of
-    registration will be sent via email upon clearance of payment.
+    Registration will be accepted <em>ONLY</em> upon the successful reception of
+    corresponding payment. The confirmation of registration will be sent via email
+    upon clearance of payment.
   </p>
-  <p class="font-bold text-red-500">
-    Please make sure your email server won’t filter out our notification emails
-    as spams!
+  <p>
+    <em>
+      Please make sure your email server won’t filter out our notification
+      emails as spams!
+    </em>
   </p>
 </BaseLayout>
-
-<style>
-  .fee-table {
-    td,
-    th {
-      @apply border border-white;
-    }
-
-    thead tr {
-      @apply bg-teal-800 text-white;
-    }
-    tbody {
-      td {
-        @apply text-center;
-      }
-      th {
-        @apply bg-teal-600 text-white;
-      }
-      tr {
-        @apply bg-teal-100;
-      }
-    }
-  }
-</style>

@@ -1,0 +1,51 @@
+/* Table styles */
+
+.tb-colored {
+  td,
+  th {
+    @apply border border-white;
+  }
+
+  thead tr {
+    @apply bg-teal-800 text-white;
+  }
+  tbody {
+    th {
+      @apply bg-teal-600 text-white;
+    }
+    tr {
+      @apply bg-teal-100;
+    }
+  }
+}
+
+.tb-wrapper {
+  @apply my-4 overflow-auto py-2;
+
+  table {
+    @apply w-full whitespace-nowrap;
+
+    tb,
+    th {
+      @apply px-2;
+    }
+  }
+}
+
+.td-center {
+  td {
+    @apply text-center;
+  }
+}
+
+.th-left {
+  th {
+    @apply text-left;
+  }
+}
+
+.th-right {
+  th {
+    @apply text-right;
+  }
+}
